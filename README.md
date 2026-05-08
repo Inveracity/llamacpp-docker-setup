@@ -21,3 +21,9 @@ docker compose up -d
 ```bash
 docker compose down
 ```
+
+## System specs
+
+- 13th Gen Intel Core i7-13700K 16 cores at 3.40GHz
+- 32 GB of DDR5 RAM
+- GeForce RTX 4060 8GB VRAM

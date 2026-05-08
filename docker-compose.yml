@@ -7,6 +7,8 @@ services:
       - "8080:8080"
     volumes:
       - ./models:/models
+    cap_add:
+      - IPC_LOCK
     environment:
       TZ: "UTC"
       NVIDIA_VISIBLE_DEVICES: "all"
@@ -21,7 +23,14 @@ services:
       - "--flash-attn"
       - "on"
       - "--ctx-size"
-      - "64000"
+      - "12800"
       - "--mlock"
-      - "--defrag-thold"
-      - "0.1"
+      - "--n-cpu-moe"
+      - "16"
+      - "--n-gpu-layers"
+      - "999"
+      - "--no-mmap"
+      - "--cache-type-k"
+      - "q8_0"
+      - "--cache-type-v"
+      - "q4_0"
